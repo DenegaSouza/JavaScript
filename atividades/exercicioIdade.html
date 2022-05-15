@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="hora">Insira a hora de início:</label>
+    <input type="text" id="hora">
+
+    <br><br>
+    <button onclick="verificarTurno()">Verificar Turno</button>
+
+    <script>
+
+        function verificarTurno() {
+            let hora = document.getElementById('hora').value;
+            if (hora >= 6 && hora <= 14) {
+                alert("PRIMEIRO TURNO")
+            } else if (hora >= 14 && hora <= 22) {
+                alert("SEGUNDO TURNO")
+            } else {
+                alert("TURNO NÃO ESTIPULADO")
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

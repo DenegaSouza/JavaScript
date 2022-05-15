@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="idade">Insira a idade:</label>
+    <input type="text" id="idade">
+
+    <br><br>
+    <button onclick="verificarIdade()">Verificar</button>
+    <button onclick="verificarIdade2()">Mostrar</button>
+
+    <script>
+        // function verificarIdade() {
+        //     let idade = document.getElementById('idade').value;
+        //     alert("A idade digitada é " + idade);
+        // }
+        function verificarIdade() {
+            let idade = document.getElementById('idade').value;
+            if (idade >= 18) {
+                alert("Maior de idade. A idade digitada é " + idade)
+            }
+            else {
+                alert("Menor de idade. A idade digitada é " + idade)
+            }
+        }
+
+        function verificarIdade2(){
+            let idade = document.getElementById('idade').value;
+            if (idade > 18) {
+                alert("O usuário tem MAIS que 18 anos")
+            } else if(idade < 18) {
+                    alert("O usuário tem MENOS que 18 anos")
+            } else {
+                    alert("O usuário tem 18 anos")
+                }
+            }
+
+    </script>
+
+</body>
+
+</html>
