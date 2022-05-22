@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="propriedade">Insira uma propriedade:</label><br>
+    <input type="text" id="propriedade">
+    <br> <br>
+    <label for="valor">Insira um valor para a propriedade:</label><br>
+    <input type="text" id="valor">
+    <br> <br>
+    <button onclick="adicionar()">Incluir no Cadastro</button>
+    <br> <br>
+
+
+    <script>
+
+        var objeto = {};
+
+        function adicionar() {
+            var propriedade = document.getElementById('propriedade').value;
+            var valor = document.getElementById('valor').value;
+
+            objeto[propriedade] = valor;
+
+            console.log(objeto);
+        }
+
+    </script>
+</body>
+
+</html>

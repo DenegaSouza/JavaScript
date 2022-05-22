@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// var cores = [];
+var cores = ['vermelho', 'verde', 'azul'];
+// var cores = new Array(7);
+
+console.log(cores);
+console.log(cores[1]);
+
+cores[1]= 'amarelo';
+console.log(cores[1]);
+
+console.log(cores.toString());
+
+cores.push('roxo'); //incluir elemento no final do array
+console.log(cores);
+
+// cores.pop(); //remover último elemento.
+// console.log(cores);
+
+cores.unshift('verde'); //incluir elemento na 1a posição do array
+console.log(cores);
+
+// cores.shift(); //remover 1o elemento.
+// console.log(cores);
+ 
+console.log(cores.indexOf('amarelo')); //mostrar o índice
+
+var posicao = cores.indexOf('azul');
+console.log(posicao);
+cores.splice(posicao, 1);
+console.log(cores.toString());
+
+var posicao = cores.indexOf('amarelo');
+console.log(posicao);
+cores.splice(posicao, 1,'preto');
+console.log(cores.toString());
+
+cores.splice(posicao, 0,'laranja');
+console.log(cores.toString());
+
+</script>
+</body>
+</html>

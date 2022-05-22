@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+
+    }
+
+    button {
+        background-color: teal;
+        padding: 10px;
+        color: white;
+        border: none;
+    }
+
+    button:hover {
+        cursor: pointer;
+    }
+
+    #vetor {
+        border: solid 1px tomato;
+        margin-top: 20px;
+        padding: 15px;
+    }
+
+    span {
+        background-color: tomato;
+        padding: 10px;
+        color: white;
+        border-radius: 10px;
+    }
+</style>
+
+<body>
+    <label for="cor">Informe uma cor:</label><br>
+    <input type="text" id="cor">
+    <br> <br>
+    <button onclick="push()">Adicionar no Final (push)</button>
+    <br> <br>
+    <button onclick="unshift()">Adicionar no Início (unshift)</button>
+    <br> <br>
+    <button onclick="pop()">Remover a última cor (pop)</button>
+    <br> <br>
+    <button onclick="shift()">Remover a primeira cor (shift)</button>
+    <br> <br>
+
+    <div id="vetor">
+
+    </div>
+    <br>
+
+    <label for="posicao">Informe a posição:</label><br>
+    <input type="text" id="posicao">
+    <br> <br>
+    <label for="removidos">Informe a qtd de remoções:</label><br>
+    <input type="text" id="removidos">
+    <br> <br>
+    <label for="novoValor">Informe o novo valor:</label><br>
+    <input type="text" id="novoValor">
+    <br> <br>
+    <button onclick="remover()">Remover</button>
+    <br> <br>
+    <button onclick="adicionar()">Adicionar</button>
+    <br> <br>
+    <button onclick="substituir()">Substituir</button>
+    <br> <br>
+
+    <script>
+
+        var cores = [];
+
+        function push() {
+            var cor = document.getElementById('cor').value;
+            cores.push(cor); //incluir elemento no final do array
+            console.log(cores);
+            atualizarDiv()
+        }
+
+        function unshift() {
+            var cor = document.getElementById('cor').value;
+            cores.unshift(cor); //incluir elemento na 1a posição do array
+            console.log(cores);
+            atualizarDiv();
+        }
+
+        function pop() {
+            var cor = document.getElementById('cor').value;
+            cores.pop(cor); //remover último elemento.
+            console.log(cores);
+            atualizarDiv();
+        }
+        function shift() {
+            var cor = document.getElementById('cor').value;
+            cores.shift(cor); //remover 1o elemento.
+            console.log(cores);
+            atualizarDiv();
+        }
+
+        function remover() {
+            var posicao = document.getElementById('posicao').value;
+            var removidos = document.getElementById('removidos').value;
+            posicao = cores.indexOf(posicao);
+            cores.splice(posicao, removidos);
+            atualizarDiv();
+        }
+
+        function adicionar() {
+            var posicao = document.getElementById('posicao').value;
+            var novoValor = document.getElementById('novoValor').value;
+            posicao = cores.indexOf(posicao);
+            cores.splice(posicao, 0, novoValor);
+            atualizarDiv();
+        }
+
+        function substituir() {
+            var posicao = document.getElementById('posicao').value;
+            var removidos = document.getElementById('removidos').value;
+            var novoValor = document.getElementById('novoValor').value;
+            posicao = cores.indexOf(posicao);
+            cores.splice(posicao, removidos, novoValor);
+            atualizarDiv();
+        }
+
+        function atualizarDiv() {
+            var vetor = document.getElementById('vetor');
+
+            vetor.innerHTML = "";
+            for (let x=0; x < cores.length; x++){
+                console.log(cores.toString());
+                vetor.innerHTML += "<span>"+cores[x]+"</span>";
+            }
+        }
+
+    </script>
+</body>
+
+</html>
